@@ -27,7 +27,7 @@ The pipeline can be broken down into 3 stages:
    ![Genome Segment Annotation](Figures/Figure2.png)
 
 3. [**Integration of Hi-C data**](https://github.com/AntonisK95/Prediction_of_transcr_condensates/tree/main/Hi-C_Integration)
-   3D interaction between and within segments is scored with the integration of Hi-C data. Candidate regions are identified through the application of a set of thresholds associated with chromosomal interaction values. This step makes use of [SHAMAN](https://github.com/tanaylab/shaman)
+   3D interaction between and within segments is scored with the integration of Hi-C data. Candidate regions are identified through the application of a set of thresholds associated with chromosomal interaction values. This step makes use of [SHAMAN](https://github.com/tanaylab/shaman).
 
     ![Hi-C Integration](Figures/Figure3.png)
 
