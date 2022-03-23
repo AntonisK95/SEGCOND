@@ -3,7 +3,6 @@
 This repository contains scripts related to the 3 main steps of a computational pipeline that aims to propose genomic regions that participate in the formation of transcriptional condensates. 
 
 More details for this pipeline may be found in our paper:  
-
 **"Identification of transcriptional condensate-associated genomic regions through the integration of multi-omics data"**  
 _Antonis Klonizakis, Christoforos Nikolaou and Thomas Graf_
 
