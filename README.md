@@ -1,6 +1,6 @@
 # Prediction of genomic regions participating in the formation of transcriptional condensates
 
-This repository contains scripts related to the 3 main steps of a computational pipeline that aims to propose genomic regions that participate in the formation of transcriptional condensates. 
+This repository contains scripts related to a computational pipeline that aims to propose genomic regions that participate in the **formation of transcriptional condensates**. 
 
 More details for this pipeline may be found in our paper:  
 **"Identification of transcriptional condensate-associated genomic regions through the integration of multi-omics data"**  
@@ -11,10 +11,6 @@ Our methodology aims to identify potential candidate regions participating in th
 Regions in the genome participating in putative, transcriptional condensates should exhibit specific characteristics within regards to their protein occupancy, accessibility levels and 3D chromatin contacts. There are several observations being reported or theorized for regions identified as transcriptional condensate. Condensate regions are reported to be co-occupied by multiple transcription factors and high levels of enhancer related marks, while also harboring multiple 3D interactions between gene promoters and regulatory elements.
 
 The proposed methodology consists of three distinct stages and is outlined below:
-Hi-C Integration and candidate identification:  (Figure 1E).
-
-
-The pipeline can be broken down into 3 stages: 
 
 1. [**Segmentation of the genome**](https://github.com/AntonisK95/Prediction_of_transcr_condensates/tree/main/Segmentation)
    Omics-tracks Integration and Genome Segmentation: We integrate multiple omics datasets and through dimensionality reduction and genome segmentation we create a set of distinct genomic segments in linear chromosomes.
