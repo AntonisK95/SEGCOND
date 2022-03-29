@@ -3,8 +3,8 @@
 This repository contains scripts related to a computational pipeline that aims to propose genomic regions that participate in the **formation of transcriptional condensates**. 
 
 More details for this pipeline may be found in our paper:  
-**"Identification of transcriptional condensate-associated genomic regions through the integration of multi-omics data"**  
-_Antonis Klonizakis, Christoforos Nikolaou and Thomas Graf_
+**"SEGCOND identifies putative transcriptional condensate-associated genomic regions by integrating  multi-omics data"**  
+_Antonios Klonizakis, Christoforos Nikolaou and Thomas Graf_
 
 Our methodology aims to identify potential candidate regions participating in the formation and maintenance of biomolecular condensates, using a series of omics experimental outputs, coupled with conformational data such as HiC.
  
