@@ -68,7 +68,7 @@ scores for every timepoint are saved in the
 We can now calculate SHAMAN interaction scores for every segment pair.
 To do so a SHAMAN Hi-C **track** was generated for every timepoint. For
 instructions on how to generate such a file, please refer to the guide
-of [**shaman**](<https://tanaylab.bitbucket.io/shaman/index.html)
+of [**shaman**](https://tanaylab.bitbucket.io/shaman/index.html)
 
 To calculate the scores we can run:
 
