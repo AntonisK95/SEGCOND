@@ -33,8 +33,8 @@ The scripts that perform the above tasks are written in R. Note that the final s
 
 ## Installation and User Guide 
 
-Source code of SEGCOND and details on how to implement it are provided in the [**SEGCOND_code_and_User_Guide**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide)
+The source code of SEGCOND and details on how to implement it are provided in the [**SEGCOND_code_and_User_Guide**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide)
 
 ## Data Reproducibility 
 
-Putative Transcriptional Condensates reported in our paper and all of the intermediate files produced by our analysis are provided in the [**Publication_Data**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data) folder. A list of commands that leads to the generation of these files is also provided in the [**README.md**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data#code-to-reproduce-our-published-data) file of the same folder. 
+Putative Transcriptional Condensates reported in our paper and all of the intermediate files produced by our analysis are provided in the [**Publication_Data**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data) folder. For more details on the files and for a list of commands that leads to their generation please refer to the [**README.md**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data#code-to-reproduce-our-published-data) file of the same folder. 
