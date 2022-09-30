@@ -83,16 +83,16 @@ First let’s read the dataset:
 ``` r
 toy_data<-read.delim(sep="\t",header=F,file="chr1_pca_values_2000_bins.txt")
 
-head(toy_data)
+print(toy_data[1:6,])
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["V1"],"name":[1],"type":["fct"],"align":["left"]},{"label":["V2"],"name":[2],"type":["int"],"align":["right"]},{"label":["V3"],"name":[3],"type":["int"],"align":["right"]},{"label":["V4"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"chr1","2":"1","3":"5000","4":"-2.3304102","_rn_":"1"},{"1":"chr1","2":"5001","3":"10000","4":"-2.1579603","_rn_":"2"},{"1":"chr1","2":"10001","3":"15000","4":"1.3037624","_rn_":"3"},{"1":"chr1","2":"15001","3":"20000","4":"0.9198994","_rn_":"4"},{"1":"chr1","2":"20001","3":"25000","4":"2.1143079","_rn_":"5"},{"1":"chr1","2":"25001","3":"30000","4":"12.4207187","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+    ##     V1    V2    V3         V4
+    ## 1 chr1     1  5000 -2.3304102
+    ## 2 chr1  5001 10000 -2.1579603
+    ## 3 chr1 10001 15000  1.3037624
+    ## 4 chr1 15001 20000  0.9198994
+    ## 5 chr1 20001 25000  2.1143079
+    ## 6 chr1 25001 30000 12.4207187
 
 The file consists of 2000 continuous 5kb bins spanning from the start of
 chr1. Each bin is associated with a PCA value. The PCA value is the
@@ -124,16 +124,19 @@ segments<-segment_genome(data=toy_data,chr_list="chr1",window=1000,minimum_perce
     ## [1] "Now segmenting chr1 !"
 
 ``` r
-head(segments[[1]])
+print(segments[[1]])
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["chrom"],"name":[1],"type":["fct"],"align":["left"]},{"label":["temp1"],"name":[2],"type":["int"],"align":["right"]},{"label":["temp2"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"chr1","2":"1","3":"625000","_rn_":"chr1 1 625000"},{"1":"chr1","2":"625001","3":"2590000","_rn_":"chr1 625001 2590000"},{"1":"chr1","2":"2590001","3":"3510000","_rn_":"chr1 2590001 3510000"},{"1":"chr1","2":"3510001","3":"3915000","_rn_":"chr1 3510001 3915000"},{"1":"chr1","2":"3915001","3":"5615000","_rn_":"chr1 3915001 5615000"},{"1":"chr1","2":"5615001","3":"6635000","_rn_":"chr1 5615001 6635000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+    ##                       chrom   temp1    temp2
+    ## chr1 1 625000          chr1       1   625000
+    ## chr1 625001 2590000    chr1  625001  2590000
+    ## chr1 2590001 3510000   chr1 2590001  3510000
+    ## chr1 3510001 3915000   chr1 3510001  3915000
+    ## chr1 3915001 5615000   chr1 3915001  5615000
+    ## chr1 5615001 6635000   chr1 5615001  6635000
+    ## chr1 6635001 6790000   chr1 6635001  6790000
+    ## chr1 6790001 8700000   chr1 6790001  8700000
+    ## chr1 8700001 10000000  chr1 8700001 10000000
 
 Note that this function may require a lot of processing time depending
 on the window and the minimum_percentage options. Smaller windows and a
@@ -188,16 +191,30 @@ transforming them.
 toy_marks<-read.delim(sep="\t",header=T,stringsAsFactors = F,file="marks_0h.txt")
 
 z_score_normalized<-get_z_score(toy_marks)
-head(z_score_normalized)
+print(z_score_normalized[1:6,])
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["X..chr."],"name":[1],"type":["chr"],"align":["left"]},{"label":["X.start."],"name":[2],"type":["int"],"align":["right"]},{"label":["X.end."],"name":[3],"type":["int"],"align":["right"]},{"label":["X.ATAC0_1."],"name":[4],"type":["dbl"],"align":["right"]},{"label":["X.ATAC0_2."],"name":[5],"type":["dbl"],"align":["right"]},{"label":["X.CEBP0.1."],"name":[6],"type":["dbl"],"align":["right"]},{"label":["X.CEBP0.2."],"name":[7],"type":["dbl"],"align":["right"]},{"label":["X.H000H3K27acX1.pileup_signal."],"name":[8],"type":["dbl"],"align":["right"]},{"label":["X.H000H3K27acX2.pileup_signal."],"name":[9],"type":["dbl"],"align":["right"]},{"label":["X.H000H3K4me3X1.pileup_signal."],"name":[10],"type":["dbl"],"align":["right"]},{"label":["X.H000H3K4me3X2.pileup_signal."],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"chr1","2":"1","3":"5000","4":"-2.967375","5":"-2.992011","6":"-3.4128994","7":"-3.408674","8":"-2.907909","9":"-2.584390","10":"-2.387807","11":"-2.593350","_rn_":"1"},{"1":"chr1","2":"5001","3":"10000","4":"-2.108887","5":"-1.702335","6":"-2.5799643","7":"-1.836085","8":"-1.885490","9":"-1.729614","10":"-1.546090","11":"-1.464726","_rn_":"2"},{"1":"chr1","2":"10001","3":"15000","4":"-1.070412","5":"-1.998669","6":"-0.6704501","7":"-1.174664","8":"1.766255","9":"1.929492","10":"2.296942","11":"2.314732","_rn_":"3"},{"1":"chr1","2":"15001","3":"20000","4":"-2.225256","5":"-1.476608","6":"-1.2789003","7":"-1.574022","8":"1.963535","9":"2.178137","10":"1.894107","11":"1.212814","_rn_":"4"},{"1":"chr1","2":"20001","3":"25000","4":"-2.967375","5":"-1.845077","6":"-2.1968511","7":"-2.825453","8":"2.490124","9":"2.494125","10":"2.372626","11":"1.852075","_rn_":"5"},{"1":"chr1","2":"25001","3":"30000","4":"-1.587042","5":"-1.568002","6":"-3.4128994","7":"-3.408674","8":"3.407897","9":"3.241702","10":"4.712924","11":"4.833217","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+    ##   X..chr. X.start. X.end. X.ATAC0_1. X.ATAC0_2. X.CEBP0.1. X.CEBP0.2.
+    ## 1    chr1        1   5000  -2.967375  -2.992011 -3.4128994  -3.408674
+    ## 2    chr1     5001  10000  -2.108887  -1.702335 -2.5799643  -1.836085
+    ## 3    chr1    10001  15000  -1.070412  -1.998669 -0.6704501  -1.174664
+    ## 4    chr1    15001  20000  -2.225256  -1.476608 -1.2789003  -1.574022
+    ## 5    chr1    20001  25000  -2.967375  -1.845077 -2.1968511  -2.825453
+    ## 6    chr1    25001  30000  -1.587042  -1.568002 -3.4128994  -3.408674
+    ##   X.H000H3K27acX1.pileup_signal. X.H000H3K27acX2.pileup_signal.
+    ## 1                      -2.907909                      -2.584390
+    ## 2                      -1.885490                      -1.729614
+    ## 3                       1.766255                       1.929492
+    ## 4                       1.963535                       2.178137
+    ## 5                       2.490124                       2.494125
+    ## 6                       3.407897                       3.241702
+    ##   X.H000H3K4me3X1.pileup_signal. X.H000H3K4me3X2.pileup_signal.
+    ## 1                      -2.387807                      -2.593350
+    ## 2                      -1.546090                      -1.464726
+    ## 3                       2.296942                       2.314732
+    ## 4                       1.894107                       1.212814
+    ## 5                       2.372626                       1.852075
+    ## 6                       4.712924                       4.833217
 
 Using this z-score normalized data.frame, we can come up with genomic
 bins that display an abundance of activatory-related marks. Here we deem
@@ -208,16 +225,16 @@ To get these bins we can run:
 
 ``` r
 enhancer_bins<-votes_matrix(cooccupancy_mat=z_score_normalized,picked_columns=c(4,5,8,9),threshold=1,picked_lines=FALSE,lines=NULL)
-head(enhancer_bins)
+print(enhancer_bins[1:6,])
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["chr"],"name":[1],"type":["chr"],"align":["left"]},{"label":["start"],"name":[2],"type":["int"],"align":["right"]},{"label":["end"],"name":[3],"type":["int"],"align":["right"]},{"label":["co-occupancy"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"chr1","2":"1","3":"5000","4":"0","_rn_":"1"},{"1":"chr1","2":"5001","3":"10000","4":"0","_rn_":"2"},{"1":"chr1","2":"10001","3":"15000","4":"0","_rn_":"3"},{"1":"chr1","2":"15001","3":"20000","4":"0","_rn_":"4"},{"1":"chr1","2":"20001","3":"25000","4":"0","_rn_":"5"},{"1":"chr1","2":"25001","3":"30000","4":"0","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+    ##    chr start   end co-occupancy
+    ## 1 chr1     1  5000            0
+    ## 2 chr1  5001 10000            0
+    ## 3 chr1 10001 15000            0
+    ## 4 chr1 15001 20000            0
+    ## 5 chr1 20001 25000            0
+    ## 6 chr1 25001 30000            0
 
 We can now identify segments that show an abundance of the identified
 enhancer bins. To do so, we will assume that the distribution of
@@ -270,16 +287,16 @@ fit<-suppressWarnings(fit_zinegbin_model(segments=segments[[1]],new_scores=enhan
     ## [1] "Fitting Zero-inflated NB models!"
 
 ``` r
-head(fit)
+print(fit[1:6,])
 ```
 
-<div data-pagedtable="false">
-
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["chr"],"name":[1],"type":["fct"],"align":["left"]},{"label":["start"],"name":[2],"type":["int"],"align":["right"]},{"label":["end"],"name":[3],"type":["int"],"align":["right"]},{"label":["log2FC"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["p-value"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"chr1","2":"1","3":"625000","4":"-8.5978446","5":"0.678929025","_rn_":"chr1 1 625000"},{"1":"chr1","2":"625001","3":"2590000","4":"2.2116693","5":"0.003148344","_rn_":"chr1 625001 2590000"},{"1":"chr1","2":"2590001","3":"3510000","4":"-0.4789136","5":"0.395388327","_rn_":"chr1 2590001 3510000"},{"1":"chr1","2":"3510001","3":"3915000","4":"1.6903028","5":"0.032863423","_rn_":"chr1 3510001 3915000"},{"1":"chr1","2":"3915001","3":"5615000","4":"-9.9283850","5":"0.866989427","_rn_":"chr1 3915001 5615000"},{"1":"chr1","2":"5615001","3":"6635000","4":"1.4144904","5":"0.050854077","_rn_":"chr1 5615001 6635000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-
-</div>
+    ##                       chr   start     end     log2FC     p-value
+    ## chr1 1 625000        chr1       1  625000 -8.7287981 0.682034558
+    ## chr1 625001 2590000  chr1  625001 2590000  2.2106220 0.003433315
+    ## chr1 2590001 3510000 chr1 2590001 3510000 -0.5272157 0.416570657
+    ## chr1 3510001 3915000 chr1 3510001 3915000  1.5669767 0.032283112
+    ## chr1 3915001 5615000 chr1 3915001 5615000 -9.9544869 0.857952684
+    ## chr1 5615001 6635000 chr1 5615001 6635000  1.3747649 0.065295268
 
 Note that ocassionally the function may fail to run with an error of
 **“mle failed to estimate the parameters with the error code 7”**. In
