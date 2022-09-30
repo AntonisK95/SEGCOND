@@ -5,7 +5,7 @@ Code to reproduce our published data.
 This is a step-by-step guide reproducing the final files used in the
 analysis of our paper. For details regarding the methodology used here
 please refer to our publication, the **User_Guide** folder and the
-**Viginnetttes** file.
+**Vignette** file.
 
 ## Segmentation
 
