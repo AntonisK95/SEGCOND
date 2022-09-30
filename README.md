@@ -8,7 +8,7 @@ More details for this pipeline may be found in our paper:
 **"SEGCOND identifies putative transcriptional condensate-associated genomic regions by integrating  multi-omics data"**  
 _Antonios Klonizakis, Christoforos Nikolaou and Thomas Graf_
 
-Our methodology aims to identify potential candidate regions participating in the formation and maintenance of biomolecular condensates, using a series of omics experimental outputs, coupled with conformational data such as HiC.
+Our methodology aims to identify potential candidate regions participating in the formation and maintenance of biomolecular condensates, using a series of omics experimental outputs, coupled with conformational data such as Hi-C.
  
 Regions in the genome participating in putative, transcriptional condensates should exhibit specific characteristics within regards to their protein occupancy, accessibility levels and 3D chromatin contacts. There are several observations being reported or theorized for regions identified as transcriptional condensate. Condensate regions are reported to be co-occupied by multiple transcription factors and high levels of enhancer related marks, while also harboring multiple 3D interactions between gene promoters and regulatory elements.
 
