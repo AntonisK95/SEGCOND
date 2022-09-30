@@ -1,5 +1,7 @@
 # Prediction of genomic regions participating in the formation of transcriptional condensates
 
+## Introduction
+
 This repository contains scripts related to a computational pipeline that aims to propose genomic regions that participate in the **formation of transcriptional condensates**. 
 
 More details for this pipeline may be found in our paper:  
@@ -12,20 +14,27 @@ Regions in the genome participating in putative, transcriptional condensates sho
 
 The proposed methodology consists of three distinct stages and is outlined below:
 
-1. [**Segmentation of the genome**](https://github.com/AntonisK95/Prediction_of_transcr_condensates/tree/main/Segmentation)
+1. [**Segmentation of the genome**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide#segmentation)
    Omics-tracks Integration and Genome Segmentation: We integrate multiple omics datasets and through dimensionality reduction and genome segmentation we create a set of distinct genomic segments in linear chromosomes.
 
     ![Genome Segmentation](Figures/Figure1.png)
 
-2. [**Annotation of segments**](https://github.com/AntonisK95/Prediction_of_transcr_condensates/tree/main/Annotation)
+2. [**Annotation of segments**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide#annotation)
    Segment Annotation: Each segment is scored and assigned to a different functional class with the focus being on enhancer-associated properties.
 
    ![Genome Segment Annotation](Figures/Figure2.png)
 
-3. [**Integration of Hi-C data**](https://github.com/AntonisK95/Prediction_of_transcr_condensates/tree/main/Hi-C_Integration)
+3. [**Integration of Hi-C data**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide#hi-c-integration)
    3D interaction between and within segments is scored with the integration of Hi-C data. Candidate regions are identified through the application of a set of thresholds associated with chromosomal interaction values. This step makes use of [SHAMAN](https://github.com/tanaylab/shaman).
 
     ![Hi-C Integration](Figures/Figure3.png)
 
-The scripts that perform the above tasks are written in R. In some cases computation was carried out in a computer cluster that uses the Univa GRID engine as batch system. In those cases, an accompanied script is also provided. 
+The scripts that perform the above tasks are written in R. Note that the final step of SEGCOND operates on normalized SHAMAN Hi-C **tracks**. Their generation requires a multi-core unix / linux based system or a SGE (sun grid engine) cluster for distributed computing. Please refer to the guide of [SHAMAN](https://github.com/tanaylab/shaman) for details on how to create such Hi-C **track** files. 
 
+## Installation and User Guide 
+
+Source code of SEGCOND and details on how to implement it are provided in the [**SEGCOND_code_and_User_Guide**](https://github.com/AntonisK95/SEGCOND/tree/main/SEGCOND_code_and_User_Guide)
+
+## Data Reproducibility 
+
+Putative Transcriptional Condensates reported in our paper and all of the intermediate files produced by our analysis are provided in the [**Publication_Data**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data) folder. A list of commands that leads to the generation of these files is also provided in the [**README.md**](https://github.com/AntonisK95/SEGCOND/tree/main/Publication_Data#code-to-reproduce-our-published-data) file of the same folder. 
