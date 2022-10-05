@@ -38,7 +38,7 @@ specifying the missing package if you try to run a function that needs
 it.
 
 For the explanation of every functions’ parameters please refer to the
-**viginnete** file.
+**Vignette** file.
 
 # Input data files
 
