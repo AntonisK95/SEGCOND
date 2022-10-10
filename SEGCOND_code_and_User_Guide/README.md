@@ -101,6 +101,12 @@ RPKM values associated with each bin. The original file before the PCA
 transformation can be found in the **source** files folder and is going
 to be used in a later step.
 
+**Important Notes** 
+
+1. The segmentation step process one-dimensional data and that is why a PCA transformation is applied. Since only the first principal component values (PC1) are used, the amount of variance captured by PCA has to be evaluated by the user. In our study, where transcription activation-related marks were used, the PC1 captured more than 50% of the variance. We would recommend using a dataset that exceeds this amount of variance if activation-related marks are used. 
+
+2. Users should also evaluate whether different input datasets contribute equally towards the PC1 values. If they don't, a specfic dataset could be "masking" others. Such practical examples could be two different transcription factor ChIP-seq datasets, with one dominating PC1 contribution while the other not. In such cases it is advised to run the segmentation step for each dataset separately.   
+
 We can partition this part of chr1 into segments by running the
 following command:
 
