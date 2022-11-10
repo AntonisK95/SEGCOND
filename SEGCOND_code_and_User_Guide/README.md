@@ -63,7 +63,7 @@ can find a toy **marks** file and a **track** file that can be used in
 order to run the algorithm.
 
 For more details on the theoretical background and the rationale behind
-each step, refer to our publication “**SEGCOND proposes putative
+each step, refer to our publication “**SEGCOND predicts putative
 transcriptional condensate- associated genomic regions by integrating
 multi-omics data**”.
 
