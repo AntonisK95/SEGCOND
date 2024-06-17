@@ -669,6 +669,7 @@ get_putative_condensates<-function(shaman_hic_scores,shaman_threshold,qualifying
     binary_matrix<-conversion_to_binary_matrix(testing_list=shaman_hic_scores[[i]],qualifiers=qualifying_segments,threshold=shaman_threshold)
     final_matrix<-distance_filter_and_deletion(testing_for_dist=binary_matrix,distance=distance_filter)
     ptcs<-clean_components(final_matrix)
+    if(length(ptcs)>0){ 
     list_with_putative_condensates<-append(list_with_putative_condensates,ptcs)
     temporar_list<-list()
     for(j in 1:length(ptcs)){
@@ -676,7 +677,7 @@ get_putative_condensates<-function(shaman_hic_scores,shaman_threshold,qualifying
     }
     list_with_all_info<-append(list_with_all_info,temporar_list)
   }
-  
+  }
   
   list_with_ptcs<-list(list_with_putative_condensates,list_with_all_info)
   names(list_with_ptcs)<-c("PTCs","Edge Info")
